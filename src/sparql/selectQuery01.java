@@ -1,0 +1,41 @@
+package sparql;
+
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.query.Query;
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QueryFactory;
+import org.apache.jena.query.QuerySolution;
+import org.apache.jena.query.ResultSet;
+import org.apache.jena.rdf.model.Literal;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.RDFNode;
+import org.apache.jena.rdf.model.Resource;
+
+public class selectQuery01 {
+	public static void main(String[] args) {
+		OntModelSpec oms = new OntModelSpec(OntModelSpec.OWL_MEM_RULE_INF);
+		
+		OntModel m = ModelFactory.createOntologyModel(oms, null);
+		 
+		m.read("D:/workspace/JenaTutorial/Documents/rdf/vc-db-1.rdf");
+		
+		String queryString = "SELECT ?x ?fname WHERE {?x "
+				+ "<http://www.w3.org/2001/vcard-rdf/3.0#FN ?fname}";
+		Query query = QueryFactory.create(queryString);
+		QueryExecution qexec = QueryExecutionFactory.create(query, m);
+		try {
+			ResultSet results = qexec.execSelect();
+			for (;results.hasNext();) {
+				QuerySolution soln = results.nextSolution();
+				RDFNode x = soln.get("x");
+				Resource r = soln.getResource("x");
+				Literal l = soln.getLiteral("fname");
+				System.out.println("result " + x + " " + r + " " + l);
+			}
+		} finally {
+			qexec.close();
+		}
+	}
+}
