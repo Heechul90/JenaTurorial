@@ -12,7 +12,7 @@ import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.rdf.model.ModelFactory;
 
-public class selectQuery05 {
+public class selectQuery06 {
 	
 	// sparql로 질의하고 json 형태로 받기
 	
@@ -50,7 +50,7 @@ public class selectQuery05 {
         }
 	
 	public static void main(String[] args) {
-		selectQuery05 query = new selectQuery05();
+		selectQuery06 query = new selectQuery06();
 		query.run();
 		
     }
