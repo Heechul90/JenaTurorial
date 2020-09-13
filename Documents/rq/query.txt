@@ -1,0 +1,37 @@
+
+# 러닝맵
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX example: <http://example.com/ontology/>
+SELECT ?nodeURI ?school ?grade ?semester ?subject ?part_num ?part ?keyword
+WHERE {
+    ?s example:keyword ?keywordURI .
+    ?keywordURI rdfs:label ?keyword .
+    FILTER REGEX(?keyword, "searchkeyword") .
+    ?nodeURI example:keyword ?keywordURI;
+    example:school ?schoolURI;
+    example:grade ?gradeURI;
+    example:semester ?semesterURI;
+    example:subject ?subjectURI;
+    example:part_num ?part_numURI;
+    example:part ?partURI .
+    ?schoolURI rdfs:label ?school .
+    ?gradeURI rdfs:label ?grade .
+    ?semesterURI rdfs:label ?semester .
+    ?subjectURI rdfs:label ?subject .
+    ?part_numURI rdfs:label ?part_num .
+    ?partURI rdfs:label ?part .
+    ?keywordURI rdfs:label ?keyword .
+}
+LIMIT 20"
+
+
+# 연관검색어
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX example: <http://example.com/ontology/>
+SELECT ?s ?keyword 
+WHERE { 
+    ?s example:keyword ?keywordURI . 
+    ?keywordURI rdfs:label ?keyword . 
+    FILTER REGEX(?keyword, "searchkeyword") 
+}
+LIMIT 20

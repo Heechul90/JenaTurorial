@@ -10,7 +10,7 @@ public class HelloRDFWorld01 {
 	public static void main(String[] args) {
 		
 	Model m = ModelFactory.createDefaultModel();
-    m.read("D:/workspace/JenaTutorial/Documents/owl/obi.owl");
+    m.read("D:/workspace/JenaTutorial/Documents/ttl/keris_data_v10_rdf_v2.ttl");
 
     m.write(System.out, "RDF/XML");
     
