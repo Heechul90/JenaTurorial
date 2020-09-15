@@ -29,7 +29,7 @@ public class KerisQuery {
 //		OntModel m =  ModelFactory.createOntologyModel( oms, null );
 		Model m = ModelFactory.createDefaultModel();
 		
-        m.read("D:/databases/keris_data_v11_rdf_v3.ttl");
+        m.read("D:/databases/test1.ttl");
 //        m.read("D:/github/SPARQL/LearningSPARQLExamples/ex012.ttl");
 //        m.write(System.out, "RDF/XML");
 
@@ -104,11 +104,11 @@ public class KerisQuery {
         
         StringBuffer sb4 = new StringBuffer();
         sb4.append("PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>");
-        sb4.append("PREFIX ab: <http://learningsparql.com/ns/addressbook#>");
-        sb4.append("PREFIX d: <http://learningsparql.com/ns/data#>");
-//        sb4.append("select * ");
-        sb4.append("INSERT DATA { d:i8301 ab:homeTel \"(718) 440-9821\" . }");
-        sb4.append("ab:Person a rdfs:Class . ");
+        sb4.append("PREFIX example: <http://example.com/ontology/>");
+        sb4.append("select ?id ?keywordURI ");
+        sb4.append("WHERE { GRAPH <http://example.com> { ");
+        sb4.append(" ?id example:keyword ?keywordURI . ");
+        sb4.append(" } } ");
         
         
 
@@ -117,12 +117,14 @@ public class KerisQuery {
 //        String queryString = sb1.toString();
 //        String queryString = sb2.toString();
 //        String queryString = sb3.toString();
-        String queryString = sb2.toString();
+        String queryString = sb4.toString();
+        
+        System.out.println(queryString);
 
         Query query = QueryFactory.create(queryString);
-        QueryExecution qexec = QueryExecutionFactory.create(query,m);
+        QueryExecution qexec = QueryExecutionFactory.create(query, m);
         ResultSet results = qexec.execSelect();
-        ResultSetFormatter.out(System.out,results,query);
+        ResultSetFormatter.out(System.out, results, query);
         
         //////////////////////////////////
 //        UpdateRequest update = UpdateFactory.create(sb2.toString());

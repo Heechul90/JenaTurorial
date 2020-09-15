@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58c03e49-f15f-489e-a68b-19a3e589ce07" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/bin/jenaRDFapiTutorial/HelloRDFWorld01.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jenaRDFapiTutorial/HelloRDFWorld01.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/jenaRDFapiTutorial/HelloRDFWorld09.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jenaRDFapiTutorial/HelloRDFWorld09.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/jenaRDFapiTutorial/HelloRDFWorld10.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jenaRDFapiTutorial/HelloRDFWorld10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/sparql/selectQuery06.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jenaRDFapiTutorial/HelloRDFWorld01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jenaRDFapiTutorial/HelloRDFWorld01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jenaRDFapiTutorial/HelloRDFWorld09.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jenaRDFapiTutorial/HelloRDFWorld09.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jenaRDFapiTutorial/HelloRDFWorld10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jenaRDFapiTutorial/HelloRDFWorld10.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sparql/selectQuery06.java" beforeDir="false" />
-    </list>
+    <list default="true" id="58c03e49-f15f-489e-a68b-19a3e589ce07" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,5 +29,11 @@
       <updated>1599546255278</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1883" y="599" key="FileChooserDialogImpl" timestamp="1600154794545">
+      <screen x="0" y="0" width="3072" height="1688" />
+    </state>
+    <state x="1883" y="599" key="FileChooserDialogImpl/0.0.3072.1688/3840.0.1920.1040@0.0.3072.1688" timestamp="1600154794545" />
   </component>
 </project>

@@ -21,18 +21,17 @@ public static void run(){
 		
 		OntModel m =  ModelFactory.createOntologyModel( oms, null );
 		
-		m.read("D:/workspace/JenaTutorial/Documents/ttl/keris_data_v11_rdf_v2.ttl");
+		m.read("D:/databases/test1.ttl");
         
         // 연관검색어 API
         StringBuffer sb1 = new StringBuffer();
         sb1.append("PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>");
         sb1.append("PREFIX example: <http://example.com/ontology/>");
-        sb1.append("SELECT ?s ?keyword ");
-        sb1.append("WHERE { ?s example:keyword ?keywordURI .");
-        sb1.append("?keywordURI rdfs:label ?keyword .");
+        sb1.append("SELECT ?id ?keyword ");
+        sb1.append("WHERE { GRAPH <http://example.com> { ");
+        sb1.append("?id rdfs:label ?keyword . ");
         sb1.append("FILTER REGEX(?keyword, \"화강암\") ");
-        sb1.append("}");
-        sb1.append("LIMIT 30");
+        sb1.append(" }}");
         
         String queryString = sb1.toString();
         
